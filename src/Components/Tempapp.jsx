@@ -7,7 +7,7 @@ export default function Tempapp() {
     const [search, setSearch] = useState("Mumbai");
 
     const fetchApi = useCallback(async () => {
-        const url = `https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=dbbaa6e9d567ceb92845caba2c345763`;
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=${process.env.APIKEY}`;
         const response = await fetch(url);
         const resJson = await response.json();
 
